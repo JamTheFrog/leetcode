@@ -10,10 +10,12 @@ Example 1:
 
 Input: nums = [1,2,3,1]
 Output: true
+
 Example 2:
 
 Input: nums = [1,2,3,4]
 Output: false
+
 Example 3:
 
 Input: nums = [1,1,1,3,3,4,3,2,4,2]
@@ -33,7 +35,7 @@ Video link: https://www.youtube.com/watch?v=3OamzN90kPg&t=385s
 
 My notes:
 
-There are two ways of solving the problem:
+There are three ways of solving the problem:
 
 1. Sort the array and itterate comapring neighbouring values 
 until they are equal, if they are equal return true. 
@@ -43,5 +45,9 @@ This gives a time complexity of nlogn and space of 1.
 We use a hash set. We itterate over the array, checking if the element
 is in the hashset, if it isnt we add it and if it is we return true
 This gives a time complexity of n and space of n.
+
+3. The best solution is to create a set from the array 
+and see if the set length is equal to the array length.
+This gives a time complexity of 1 and space of n
 
 ====================================================================================
