@@ -52,7 +52,8 @@ This has a time complexity of n and space of log n if we use quick sort.
 2. If we use a hash map we can map each character in first string 
 setting it as a key and giving it a count value of how many same chars there are.
 After this we subtract from this count value while itterating over the second str.
-If the value of one key is <0 then we return false
+If the value of one key is <0 then we return false.
+This has a time complexity of n and space of 1.
 
 Remember to first check if the length of the two strings is equal.
 They cannot be anagrams if the length of one is different from the other.
