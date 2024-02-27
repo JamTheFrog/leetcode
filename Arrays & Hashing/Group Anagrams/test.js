@@ -39,33 +39,13 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-  let sortedStrs = [];
-
-  // Step 2: Loop through each string in the array
-  for (let str of strs) {
-    // Get charcode values for each character
-    let charcodes = [];
-    for (let i = 0; i < str.length; i++) {
-      charcodes.push(str.charCodeAt(i));
-    }
-
-    // Sort the characters based on their charcode values
-    charcodes.sort((a, b) => a - b);
-
-    // Combine the sorted characters back into a string
-    let sortedStr = "";
-    for (let i = 0; i < charcodes.length; i++) {
-      sortedStr += String.fromCharCode(charcodes[i]);
-    }
-
-    // Push the sorted string into the array of sorted strings
-    sortedStrs.push(sortedStr);
-  }
-
-  // Step 3: Sort the array of sorted strings
-  sortedStrs.sort();
-
-  return sortedStrs;
+  const map = new Map();
+ for (let str of strs){
+  let sortedStr = str.split('').sort().join();
+  if(map.has(sortedStr)) map.set(sortedStr, [...map.get(sortedStr), str]);
+  else map.set(sortedStr, [str])
+ }
+  return [...map.values()];
 };
 
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat", "aet"]));
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat"]));

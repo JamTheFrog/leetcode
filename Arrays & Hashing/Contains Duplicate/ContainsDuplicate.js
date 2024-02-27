@@ -14,7 +14,6 @@ var containsDuplicate = (nums) => {
       if (isDuplicate) return true;
     }
   }
-
   return false;
 };
 
