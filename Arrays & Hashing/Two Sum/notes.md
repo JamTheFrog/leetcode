@@ -43,6 +43,7 @@ Can you come up with an algorithm that is less than O(n2) time complexity?
 ====================================================================================
 
 Video link: https://www.youtube.com/watch?v=KLlXCFG5TnA
+Leetcode link: https://leetcode.com/problems/two-sum
 
 ====================================================================================
 

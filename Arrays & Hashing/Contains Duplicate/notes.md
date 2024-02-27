@@ -30,6 +30,7 @@ Constraints:
 ====================================================================================
 
 Video link: https://www.youtube.com/watch?v=3OamzN90kPg&t=385s
+Leetcode link: https://leetcode.com/problems/contains-duplicate/description/
 
 ====================================================================================
 
