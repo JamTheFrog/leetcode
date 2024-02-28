@@ -13,16 +13,19 @@ var topKFrequent = function(nums, k) {
         else frequency[nums[i]] = 1;
     }
     let result = Object.keys(frequency).map((key) => [Number(key), frequency[key]]);
+    console.log(result); 
     let sortedResult = result.sort((a,b) => {
+        console.log(b, a);
         return b[1]-a[1]
     })
     let output = []
     for ( let i = 0; i < k; i++){
+        console.log(sortedResult[i] + " sorted result at " + i);
         output.push(sortedResult[i][0])
     }
     return output;
 };
-
+topKFrequent([1,1,1,1,2,3,4,5,5,5,5], 2)
 /**
  * Without Sort
  * Time O(N) | Space O(k)

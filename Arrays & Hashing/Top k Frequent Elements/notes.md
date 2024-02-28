@@ -39,18 +39,25 @@ My notes:
 
 There are two ways of solving the problem:
 
-1. If we take both strings, sort them with localeCompare we can compare them.
-If they are equal then the strings are anagrams of each other and we return true.
-Else false.
-This has a time complexity of n and space of log n if we use quick sort.
+1. The first and slower approach is to solve the problem with a frequency list.
+We itterate through the array and push the elements into a frequency list. 
+After this we itterate through the keys of the frequency list and order it into an
+array of tuples where the structure is the following 
+[[element, number of occurances], ...]
+This approach has a time complexity of O(nlog(n)) due to the extra sorting
 
-2. If we use a hash map we can map each character in first string 
-setting it as a key and giving it a count value of how many same chars there are.
-After this we subtract from this count value while itterating over the second str.
-If the value of one key is <0 then we return false.
-This has a time complexity of n and space of 1.
-
-Remember to first check if the length of the two strings is equal.
-They cannot be anagrams if the length of one is different from the other.
+2. The second and better approach with a time complexity of O(n) is
+to create an extra array immediately that is innitiated to the size of the array we 
+have been passed + 1, why + 1, because we need a case where the number of occurrences 
+of the elements is 0 despite that index never being used. 
+Futhermore, we will use the indexes of the array as the counters of the frequency of
+elements in our original array. This is a good approach because we dont need to 
+compare the count of elements to the count of other elements in order to sort them.
+After creating the same frequency list we made in the first approach we just access
+the result array by using the value of the frequency enteries as the array index,
+then just pushing on the values into the subarray situated at that index. After this
+we reverse the array so our highest values come as the first indexes when 
+the our sorted array is being itterated over. We itterate and reduce k for every time
+we push an elements into the result array.
 
 ====================================================================================
